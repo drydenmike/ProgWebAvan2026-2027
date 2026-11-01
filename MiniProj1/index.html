@@ -31,10 +31,6 @@
       font-family: 'Inter', sans-serif;
     }
 
-    html, body {
-      height: 100%;
-    }
-
     body {
       background-color: var(--bg);
       color: var(--text);
@@ -92,14 +88,13 @@
       background-color: #eff6ff;
     }
 
-    /* Container Principal com altura mínima para estabilizar o rodapé */
+    /* Container Principal Flex: flex: 1 faz crescer automaticamente sem exceder 100vh */
     main {
       flex: 1;
       max-width: 1100px;
       width: 100%;
       margin: 2rem auto;
       padding: 0 2rem;
-      min-height: calc(100vh - 220px);
     }
 
     /* Animação de Transição SPA */
@@ -241,7 +236,7 @@
 </head>
 <body>
 
-  <div id="app">
+  <div id="app" style="display: flex; flex-direction: column; min-height: 100vh;">
     <!-- Header com Navegação SPA -->
     <header>
       <nav>
@@ -330,7 +325,7 @@
       </div>
     </div>
 
-    <!-- Rodapé com Identidade Virtual (Ícones Redes Sociais) -->
+    <!-- Rodapé com Identidade Virtual Fixado ao Fundo -->
     <footer>
       <p>© 2026 Miguel - Identidade Virtual e Presença Digital</p>
       <div class="social-icons">
